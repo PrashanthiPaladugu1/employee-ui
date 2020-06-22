@@ -1,0 +1,29 @@
+<div class="panel panel-default">
+    <div class="panel-heading"> 
+        <h4>employees</h4>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped table-bordered">  
+        <thead>
+            <tr>
+                <th>firstName</th>
+                <th>lastName</th>
+                <th>emailId</th>
+                <th>age</th>
+                <th>salary</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let employee of employee | async">
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.emailId}}</td>
+                <td>{{employee.age}}</td>
+                <td>{{employee.salary}}</td>
+                <td><button (click) = "deleteEmployee(employee.id)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
